@@ -1,16 +1,28 @@
-# flutter_calculator_app
+#Flutter Calculator App
+A simple calculator app built with Flutter.
 
-A new Flutter project.
+#Features:
+Basic arithmetic operations: addition, subtraction, multiplication, and division.
+Percentage calculation.
+Clear button (C) to reset the calculator.   
+Delete button (DEL) to remove the last digit.
+#Getting Started:
+Clone the repository:
+Bash
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+git clone https://github.com/saimriaz8/Calculator-App-Flutter.git
+Open the project in Android Studio or VS Code:
+Open the project directory in your preferred IDE.
+#Run the app:
+Use the built-in run/debug configurations to start the app on a simulator or physical device.
+#How to Use:
+Input numbers:
+Tap the number buttons to input digits.
+Select an operator:
+Tap the operator buttons (+, -, ×, ÷, %) to select the desired operation.
+Calculate the result:
+Tap the = button to perform the calculation.
+Clear the input:
+Tap the C button to clear the entire input.
+Delete the last digit:
+Tap the DEL button to remove the last digit.
