@@ -7,7 +7,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String operator = "";
   double result = 0;
 
-  void clickedToAddValue(String valueOfButton) {
+  void digitButtonListener(String valueOfButton) {
     setState(() {
       if (valueOfButton == "C") {
         value = "";
@@ -53,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void operatorListener(String operator) {
+  void operatorButtonListener(String operator) {
     setState(() {
       if (value != "") {
         if (result == 0) {
@@ -69,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void equalFunction() {
+  void equalButtonListener() {
     setState(() {
       switch (operator) {
         case '%':
@@ -93,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void delButtonFunction() {
+  void delButtonListener() {
     setState(() {
       String data = '';
       for (var i = 0; i < value.length - 1; i++) {
@@ -151,46 +150,147 @@ class _MyHomePageState extends State<MyHomePage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: 'C', onPressed: () => clickedToAddValue('C'), color: const Color(0xFFD2D3DA),),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '+/-', onPressed: () => VoidCallback , color:  const Color(0xFFD2D3DA)),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '%', onPressed: () => operatorListener('%'), color: const Color(0xFFD2D3DA)),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '÷', onPressed: () => operatorListener('÷'), color: const Color(0xFF4B5EFC))
+                        ButtonsOfCalculator(
+                          width: width,
+                          height: height,
+                          buttonValue: 'C',
+                          onPressed: () => digitButtonListener('C'),
+                          color: const Color(0xFFD2D3DA),
+                        ),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '+/-',
+                            onPressed: () => VoidCallback,
+                            color: const Color(0xFFD2D3DA)),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '%',
+                            onPressed: () => operatorButtonListener('%'),
+                            color: const Color(0xFFD2D3DA)),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '÷',
+                            onPressed: () => operatorButtonListener('÷'),
+                            color: const Color(0xFF4B5EFC))
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '7', onPressed: () => clickedToAddValue('7'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '8', onPressed: () => clickedToAddValue('8'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '9', onPressed: () => clickedToAddValue('9'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '×', onPressed: () => operatorListener('×'), color: const Color(0xFF4B5EFC))
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '7',
+                            onPressed: () => digitButtonListener('7'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '8',
+                            onPressed: () => digitButtonListener('8'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '9',
+                            onPressed: () => digitButtonListener('9'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '×',
+                            onPressed: () => operatorButtonListener('×'),
+                            color: const Color(0xFF4B5EFC))
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '4', onPressed: () => clickedToAddValue('4'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '5', onPressed: () => clickedToAddValue('5'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '6', onPressed: () => clickedToAddValue('6'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '-', onPressed: () => operatorListener('-'), color: const Color(0xFF4B5EFC))
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '4',
+                            onPressed: () => digitButtonListener('4'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '5',
+                            onPressed: () => digitButtonListener('5'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '6',
+                            onPressed: () => digitButtonListener('6'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '-',
+                            onPressed: () => operatorButtonListener('-'),
+                            color: const Color(0xFF4B5EFC))
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '1', onPressed: () => clickedToAddValue('1'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '2', onPressed: () => clickedToAddValue('2'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '3', onPressed: () => clickedToAddValue('3'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '+', onPressed: () => operatorListener('+'), color: const Color(0xFF4B5EFC))
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '1',
+                            onPressed: () => digitButtonListener('1'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '2',
+                            onPressed: () => digitButtonListener('2'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '3',
+                            onPressed: () => digitButtonListener('3'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '+',
+                            onPressed: () => operatorButtonListener('+'),
+                            color: const Color(0xFF4B5EFC))
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '.', onPressed: () => clickedToAddValue('.'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '0', onPressed: () => clickedToAddValue('0'), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: 'DEL', onPressed: () => delButtonFunction(), color: Colors.white),
-                        ButtonsOfCalculator(width: width, height: height, buttonValue: '=', onPressed: () => equalFunction(), color: const Color(0xFF4B5EFC))
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '.',
+                            onPressed: () => digitButtonListener('.'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '0',
+                            onPressed: () => digitButtonListener('0'),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: 'DEL',
+                            onPressed: () => delButtonListener(),
+                            color: Colors.white),
+                        ButtonsOfCalculator(
+                            width: width,
+                            height: height,
+                            buttonValue: '=',
+                            onPressed: () => equalButtonListener(),
+                            color: const Color(0xFF4B5EFC))
                       ],
                     )
                   ],
